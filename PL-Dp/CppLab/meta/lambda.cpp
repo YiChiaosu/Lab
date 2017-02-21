@@ -1,0 +1,24 @@
+#include <iostream>
+
+template<typename T1,typename T2>
+struct tyPlus{
+	using type = tyPlus<T1,T2>;
+	const static int value=(T1::value+T2::value);
+};
+
+template<int val>
+struct _int{
+//	using type = _int<val>;
+	const static int value = val;
+	operator int(){
+		return value;
+	}
+};
+
+int main()
+{
+	auto lamda_fumc = [=](int x,int y){return x+y;};
+	std::cout << lamda_fumc(2,3);
+	std::cout << tyPlus<_int<5>,_int<3>>::type::value <<std::endl;
+	return 0;
+}
