@@ -1,7 +1,9 @@
-#include <stdio.h>
+#include "list.h"
 
-int main()
+
+list hash[23];
+
+int hashfunction (char* regex)
 {
-	printf("Testing");
-	return 0;
+	
 }
